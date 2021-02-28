@@ -95,8 +95,8 @@ function addItemToCart(title, price, imageSrc) {
             'add': {                                // 'add' actionFieldObject measures.
                 'products': [{                        //  adding a product to a shopping cart.
                     'name': title,
-                    'id': 'SKU' + title,
-                    'price': price,
+                    'id': 'SKU-' + title,
+                    'price': parseFloat(price.replace('$', '')),
                     'quantity': 1
                 }]
             }

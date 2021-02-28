@@ -85,6 +85,23 @@ function addItemToCart(title, price, imageSrc) {
     cartItems.append(cartRow);
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+
+    // Measure adding a product to a shopping cart by using an 'add' actionFieldObject
+    // and a list of productFieldObjects.
+    dataLayer.push({
+        'event': 'addToCart',
+        'ecommerce': {
+            'currencyCode': 'HKD',
+            'add': {                                // 'add' actionFieldObject measures.
+                'products': [{                        //  adding a product to a shopping cart.
+                    'name': title,
+                    'id': 'SKU' + title,
+                    'price': price,
+                    'quantity': 1
+                }]
+            }
+        }
+    });
 }
 
 function updateCartTotal() {

@@ -88,6 +88,7 @@ function addItemToCart(title, price, imageSrc) {
 
     // Measure adding a product to a shopping cart by using an 'add' actionFieldObject
     // and a list of productFieldObjects.
+    dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'addToCart',
         'ecommerce': {

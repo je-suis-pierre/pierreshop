@@ -103,6 +103,18 @@ function addItemToCart(title, price, imageSrc) {
             }
         }
     });
+
+    ga("create", "UA-190777814-1");
+    ga("require", "ec");
+    ga("ec:addProduct", {
+        "id": 'SKU-' + title,
+        "name": title,
+        "price": parseFloat(price.replace('$', '')),
+        "quantity": 1
+    });
+    ga("ec:setAction", "add");
+    ga("send", "event", "detail view", "click", "addToCart");
+
 }
 
 function updateCartTotal() {

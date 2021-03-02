@@ -88,23 +88,23 @@ function addItemToCart(title, price, imageSrc) {
 
     // Measure adding a product to a shopping cart by using an 'add' actionFieldObject
     // and a list of productFieldObjects.
-    dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'addToCart',
-        'ecommerce': {
-            'currencyCode': 'HKD',
-            'add': {                                // 'add' actionFieldObject measures.
-                'products': [{                        //  adding a product to a shopping cart.
-                    'name': title,
-                    'id': 'SKU-' + title,
-                    'price': parseFloat(price.replace('$', '')),
-                    'quantity': 1
-                }]
-            }
-        }
-    });
+    // dataLayer = window.dataLayer || [];
+    // dataLayer.push({
+    //     'event': 'addToCart',
+    //     'ecommerce': {
+    //         'currencyCode': 'HKD',
+    //         'add': {
+    //             'products': [{
+    //                 'name': title,
+    //                 'id': 'SKU-' + title,
+    //                 'price': parseFloat(price.replace('$', '')),
+    //                 'quantity': 1
+    //             }]
+    //         }
+    //     }
+    // });
 
-    ga("create", "UA-190777814-1");
+    // ga("create", "UA-190777814-1");
     ga("require", "ec");
     ga("ec:addProduct", {
         "id": 'SKU-' + title,
